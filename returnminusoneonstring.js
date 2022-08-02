@@ -11,5 +11,5 @@ function factFunction(a) {
 }
 }
 var result1 = factFunction(6);
-var result2 = factFunction(20);
+var result2 = factFunction("sanjeev");
 console.log(result2);
