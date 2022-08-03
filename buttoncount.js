@@ -1,5 +1,5 @@
+var click = 0;
 function fun() {
-    var click = 0
     click = click + 1;
-    document.getElementById("count") = click;
+    document.getElementById("count").innerHTML = click;
 }
