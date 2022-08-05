@@ -1,73 +1,106 @@
-var b = '7';
-function sevenfun(){
 
-    document.getElementById('tagone').value += b;
-}
+var one = parseInt(document.getElementById("tagone").value);
+ 
 
-var a = '6';
-function sixfun(){
 
-    document.getElementById('tagone').value += a;
-}
-
-var c ='5';
-function fivefun(){
-
-    document.getElementById('tagone').value += c;
-}
-
-var d = '4';
-function fourfun(){
-
-    document.getElementById('tagone').value += d;
-}
-
-var e ='3';
-function threefun(){
-
-    document.getElementById('tagone').value += e;
-}
-
-var f = '2';
-function twofun(){
-
-    document.getElementById('tagone').value += f;
-}
-
-var g = '1';
-function onefun(){
-
-    document.getElementById('tagone').value += g;
-}
-
-var h = '+';
-function plusfun(){
-
-    document.getElementById('tagone').value += h;
-}
-
-var i = '-';
-function minusfun(){
-
-    document.getElementById('tagone').value += i;
+function sevenfun(val) {
+    
+    document.getElementById("tagone").value += val;
 }
 
 
-var j = '/';
-function dividefun(){
-
-    document.getElementById('tagone').value += j;
+function sixfun(val) {
+    
+    document.getElementById("tagone").value += val;
 }
 
-var k = '0';
-function zerofun(){
 
-    document.getElementById('tagone').value += k;
+function fivefun(val) {
+    
+    document.getElementById("tagone").value += val;
 }
 
-var l = '*';
-function dividefun(){
 
-    document.getElementById('tagone').value += l;
+function fourfun(val) {
+    
+    document.getElementById("tagone").value += val;
 }
 
+
+function threefun(val) {
+    
+    document.getElementById("tagone").value += val;
+}
+
+
+function twofun(val) {
+    
+    document.getElementById("tagone").value += val;
+}
+
+
+function onefun(val) {
+    
+    document.getElementById("tagone").value += val;
+}
+
+
+
+function plusfun() {
+    var h = '+';
+   document.getElementById("tagone").value = " ";
+document.getElementById("tagone").value += h;
+}
+
+
+function minusfun() {
+    var i = '-';
+    document.getElementById("tagone").value += i;
+}
+
+
+
+function dividefun() {
+    var j = '/';
+    document.getElementById("tagone").value += j;
+}
+
+
+function zerofun(val) {
+    
+    document.getElementById("tagone").value += val;
+}
+
+
+function multiplyfun() {
+    var l = '*';
+    document.getElementById("tagone").value += l;
+}
+
+
+function eightfun(val) {
+    
+    document.getElementById("tagone").value += val;
+}
+
+
+function ninefun(val) {
+   
+    document.getElementById("tagone").value += val;
+}
+
+
+function percentfun() {
+    var o = '%';
+    document.getElementById("tagone").value += o;
+}
+
+
+function equalfun() {
+var two = parseInt(document.getElementById("tagone").value);
+    document.getElementById("tagone").value =one + two;
+}
+
+function clearfun(){
+    document.getElementById("tagone").value = " ";
+}
