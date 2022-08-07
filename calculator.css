@@ -3,7 +3,20 @@ button {
     height: 50px;
     background-color: rgb(199, 255, 192);
     cursor: pointer;
+}
 
+.calc-row{
+    display: flex;
+    flex-direction: row;
+    flex:4;
+}
+
+.bigBtn {
+    flex:2;
+}
+
+.smallBtn{
+    flex:2;
 }
 
 #clearbutton {
@@ -34,7 +47,10 @@ button {
 }
 
 #buttondivision {
+    width:400px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #textbox {

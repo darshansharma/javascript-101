@@ -11,29 +11,43 @@
 
 <body>
 
-    <div id = "textbox"> <input type="text" id="tagone"> </div> <br> <br>
-    
-<div id = "buttondivision" >
-    <button id ="clearbutton" onclick="clearfun()"> C</button> <button id = "percentbutton" onclick="percentfun()"> %</button> <button onclick="dividefun()"> /
-    </button> <br>
+    <div id="textbox"> <input type="text" id="tagone"> </div> <br> <br>
 
-    <button onclick="setvalue('7')"> 7 </button> <button onclick="setvalue('8')"> 8 </button>
-    <button onclick="setvalue('9')"> 9
-    </button> <button onclick="multiplyfun()"> * </button> <br>
-
-    <button onclick="setvalue('4')"> 4</button> <button onclick=" setvalue('5')"> 5 </button>
-    <button onclick="setvalue('6')"> 6
-    </button> <button onclick="minusfun()"> - </button> <br>
-
-    <button onclick="setvalue('1')"> 1 </button> <button onclick="setvalue('2')"> 2 </button>
-    <button onclick="setvalue('3')"> 3
-    </button> <button onclick="plusfun()"> + </button> <br>
-
-    <button id ="zerobutton" onclick="setvalue('0')"> 0 </button> <button id ="dotbutton" onclick="dotfun()"> . </button>
-    <button onclick="equalfun()"> = </button>
-    <br>
-
-</div>
+    <div id="buttondivision">
+        <div class="calc-row">
+            <div class="bigBtn"><button id="clearbutton" onclick="clearfun()"> C</button></div>
+            <div class="smallBtn">
+                <button id="percentbutton" onclick="percentfun()">%</button>
+                <button onclick="dividefun()"> /</button> <br>
+            </div>
+        </div>
+        <div class="calc-row">
+            <button onclick="setvalue('7')"> 7 </button> <button onclick="setvalue('8')"> 8 </button>
+            <button onclick="setvalue('9')"> 9
+            </button> <button onclick="multiplyfun()"> * </button> <br>
+        </div>
+        <div class="calc-row">
+            <button onclick="setvalue('4')"> 4</button> <button onclick=" setvalue('5')"> 5 </button>
+            <button onclick="setvalue('6')"> 6
+            </button> <button onclick="minusfun()"> - </button> <br>
+        </div>
+        <div class="calc-row">
+            <button onclick="setvalue('1')"> 1 </button> <button onclick="setvalue('2')"> 2 </button>
+            <button onclick="setvalue('3')"> 3
+            </button> <button onclick="plusfun()"> + </button> <br>
+        </div>
+        <div class="calc-row">
+            <div class="bigBtn">
+                <button id="zerobutton" onclick="setvalue('0')"> 0 </button>
+            </div>
+            <div class="smallBtn">
+                <button id="dotbutton" onclick="dotfun()"> .
+                </button>
+                <button onclick="equalfun()"> = </button>
+            </div>
+            <br>
+        </div>
+    </div>
 
 
 
