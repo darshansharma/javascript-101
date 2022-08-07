@@ -2,19 +2,41 @@ button {
     width: 80px;
     height: 50px;
     background-color: rgb(199, 255, 192);
+    cursor: pointer;
+
 }
 
-#clearbutton{
+#clearbutton {
     width: 160px;
     height: 50px;
 }
 
-#zerobutton{
+#zerobutton {
     width: 160px;
     height: 50px;
 }
-#tagone{
+
+#tagone {
 
     height: 70px;
     width: 250px;
-} 
+    
+}
+
+#dotbutton {
+
+    margin: 3px;
+}
+
+#percentbutton {
+
+    margin: 3px;
+}
+
+#buttondivision {
+    text-align: center;
+}
+
+#textbox {
+    text-align: center;
+}
