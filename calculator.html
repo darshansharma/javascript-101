@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> calculator </title>
+    <script src="./calculator.js"> </script>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <div id="textbox">
+            <span type="text" id="tagone"></span>
+        </div>
+
+        <div id="buttondivision">
+            <div class="calc-row">
+                <button id="clearbutton" onclick="clearfun()"> C</button>
+                <button id="percentbutton" onclick="percentfun()">%</button>
+                <button onclick="dividefun()"> /</button>
+            </div>
+            <div class="calc-row">
+                <button onclick="setvalue('7')"> 7 </button>
+                <button onclick="setvalue('8')"> 8 </button>
+                <button onclick="setvalue('9')"> 9</button>
+                <button onclick="multiplyfun()"> * </button>
+            </div>
+            <div class="calc-row">
+                <button onclick="setvalue('4')"> 4</button>
+                <button onclick=" setvalue('5')"> 5 </button>
+                <button onclick="setvalue('6')"> 6</button>
+                <button onclick="minusfun()"> - </button>
+            </div>
+            <div class="calc-row">
+                <button onclick="setvalue('1')"> 1 </button>
+                <button onclick="setvalue('2')"> 2 </button>
+                <button onclick="setvalue('3')"> 3</button>
+                <button onclick="plusfun()"> + </button>
+            </div>
+            <div class="calc-row">
+                <button id="zerobutton" onclick="setvalue('0')"> 0 </button>
+                <button id="dotbutton" onclick="dotfun()"> .</button>
+                <button onclick="equalfun()"> = </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
