@@ -9,24 +9,37 @@ button {
     display: flex;
     flex-direction: row;
     flex:4;
+    justify-content: center;
+    margin:0%;
+    
+
 }
 
 .bigBtn {
     flex:2;
+    display: flex;
+    justify-content: center;
+    margin:0%;
 }
 
 .smallBtn{
     flex:2;
+    display: flex;
+    justify-content: space-around;
+    margin:0%;
 }
 
 #clearbutton {
     width: 160px;
     height: 50px;
+    margin:0%;
+
 }
 
 #zerobutton {
     width: 160px;
     height: 50px;
+    margin:0%;
 }
 
 #tagone {
@@ -38,12 +51,12 @@ button {
 
 #dotbutton {
 
-    margin: 3px;
+    margin: 0px;
 }
 
 #percentbutton {
 
-    margin: 3px;
+    margin: 0px;
 }
 
 #buttondivision {
