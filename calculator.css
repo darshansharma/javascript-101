@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     padding: 20px;
     margin: 0px;
@@ -10,42 +11,7 @@ body {
 }
 
 .calculator {
-    display: flex;
-<<<<<<< HEAD
-    flex-direction: row;
-    flex:4;
-    justify-content: center;
-    margin:0%;
-    
-
-}
-
-.bigBtn {
-    flex:2;
-    display: flex;
-    justify-content: center;
-    margin:0%;
-}
-
-.smallBtn{
-    flex:2;
-    display: flex;
-    justify-content: space-around;
-    margin:0%;
-}
-
-#clearbutton {
-    width: 160px;
-    height: 50px;
-    margin:0%;
-
-}
-
-#zerobutton {
-    width: 160px;
-    height: 50px;
-    margin:0%;
-=======
+    display:flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
@@ -86,7 +52,6 @@ body {
     flex-direction: row;
     width: 25%;
     flex:4;
->>>>>>> e4f039ecea603b12a5e9b0062b6948f9d8881962
 }
 
 #clearbutton, #zerobutton {
@@ -109,26 +74,21 @@ body {
     
 }
 
-<<<<<<< HEAD
-#dotbutton {
-
-    margin: 0px;
-}
-
-#percentbutton {
-
-    margin: 0px;
-=======
 .calc-row > button:hover {
     background-color: rgb(199, 255, 141);
 }
 
 .calc-row > button:nth-child(4n+1) {
     border-left: 1px solid black;
->>>>>>> e4f039ecea603b12a5e9b0062b6948f9d8881962
 }
 
 .calc-row:nth-child(1) {
     border-top: 1px solid black;
+}
+
+#equaldivision{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
 }
 
