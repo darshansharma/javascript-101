@@ -8,8 +8,19 @@ var data = {
 };
 
 
-for(var i = 0 ; i < 6; i++){
+/*for(var i = 0 ; i < 6; i++){
     console.log(data["data"][i]["firstName"]);
     console.log(data["data"][i]["lastName"]);
     console.log(data["data"][i]["age"]);
-}
+} 
+*/
+
+
+   function  insertfun() {
+
+    document.getElementById("numberone").innerText = data["data"][0]["firstName"];
+
+   }
+
+
+insertfun();
