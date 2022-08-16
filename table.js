@@ -18,9 +18,10 @@ var data = {
 
    function  insertfun() {
 
-    document.getElementById("numberone").innerText = data["data"][0]["firstName"];
-
+    document.getElementById("numberone").innerHTML = data["data"][0]["firstName"];
+    
    }
+
 
 
 insertfun();
