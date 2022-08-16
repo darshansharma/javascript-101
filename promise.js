@@ -25,21 +25,3 @@ function getData() {
         }, 2000);
     });
 }
-
-function insertfun() {
-    var id = 1;
-    for (var i = 0; i < 6; i++) {
-        document.getElementById("number" + (id + i)).innerHTML =
-            data["data"][i]["firstName"];
-
-        document.getElementById("number" + (id + i + 1)).innerHTML =
-            data["data"][i]["lastName"];
-
-        document.getElementById("number" + (id + i + 2)).innerHTML =
-            data["data"][i]["age"];
-        id += 2;
-    }
-}
-
-console.log(getData());
-console.log("Kaisa laga server se data fetching!!");
