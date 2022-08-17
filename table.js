@@ -43,3 +43,17 @@ function insertfun() {
 
 console.log(getData());
 console.log("Kaisa laga server se data fetching!!");
+
+(resp) => {
+    console.log(resp);
+};
+
+var myFn = function (resp) {
+    console.log(resp);
+};
+
+function myFn(resp) {
+    console.log(resp);
+}
+
+getData().then(myFn);
