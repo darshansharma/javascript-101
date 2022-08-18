@@ -11,7 +11,6 @@ body {
 
 .calculator {
     display: flex;
-<<<<<<< HEAD
     flex-direction: row;
     flex:4;
     justify-content: center;
@@ -126,7 +125,6 @@ body {
 
 #clearbutton, #zerobutton, #equalbtn {
     flex: 2;
->>>>>>> parent of 7142eab (working on height of equal button)
 }
 
 button {
