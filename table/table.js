@@ -41,26 +41,10 @@ function insertfun() {
     }
 }
 
-console.log(getData());
-console.log("Kaisa laga server se data fetching!!");
-
-(resp) => {
-    console.log(resp);
-};
-
-var myFn = function (resp) {
-    console.log(resp);
-};
-
-function myFn(resp) {
-    console.log(resp);
-}
-
-getData().then(function () {
-  console.log(" promise resolved")
+getData().then(function (resp) {
+    console.log(" promise resolved");
 });
 
 getData().catch(function () {
-    console.log(" error 404 not found")
-  });
-
+    console.log(" error 404 not found");
+});
