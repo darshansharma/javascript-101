@@ -41,8 +41,9 @@ function insertfun() {
     }
 }
 
-getData().then(function (resp) {
+getData().then(function () {
     console.log(" promise resolved");
+    
 });
 
 getData().catch(function () {
