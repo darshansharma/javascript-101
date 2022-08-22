@@ -2,7 +2,7 @@ function getData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let x = Math.floor(Math.random() * 11);
-            if (x < 5) {
+            if (true) {
                 resolve({
                     data: [
                         { firstName: "Darshan", lastName: "Sharma", age: 24 },
@@ -22,12 +22,11 @@ function getData() {
     });
 }
 
-
 function getMoreData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let x = Math.floor(Math.random() * 11);
-            if (x < 5) {
+            if (true) {
                 resolve({
                     data: [
                         { firstName: "Virat", lastName: "Kohli", age: 32 },
@@ -48,7 +47,7 @@ function getMoreData() {
 var contain;
 var container;
 
-function insertfun() {
+function insertfun(data) {
     var id = 1;
     for (var i = 0; i < 6; i++) {
         document.getElementById("number" + (id + i)).innerHTML =
@@ -64,22 +63,21 @@ function insertfun() {
 }
 
 getData()
-.then(function (resp) {
-    contain = resp;
-    insertfun();
-})
-.catch(function () {
-    console.log(" error 404 not found");
-});
-
-getMoreData()
-.then(function (value) {
-    container = value
-    console.log(value);
-    insertfun();
-})
-.catch(function () {
-    console.log(" error 404 not found");
-});
-
-
+    .then(function (resp) {
+        contain = resp;
+        console.log("First promise resolved");
+        console.log(contain);
+        getMoreData()
+            .then(function (value) {
+                console.log("Second promise resolved");
+                container = value;
+                console.log(container);
+            })
+            .catch(function () {
+                console.log(" error 404 not found");
+            });
+    })
+    .catch(function (err) {
+        console.log(err);
+        console.log(" error 404 not found");
+    });
