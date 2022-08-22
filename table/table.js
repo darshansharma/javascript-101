@@ -11,6 +11,25 @@ function getData() {
                             lastName: "Prabhakar",
                             age: 20,
                         },
+                    ],
+                    message: "data fetched successfully",
+                });
+            }
+            reject({
+                error: "No data found",
+            });
+        }, 2000);
+    });
+}
+
+
+function getMoreData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let x = Math.floor(Math.random() * 11);
+            if (x < 5) {
+                resolve({
+                    data: [
                         { firstName: "Virat", lastName: "Kohli", age: 32 },
                         { firstName: "Rohit", lastName: "Sharma", age: 34 },
                         { firstName: "M.S", lastName: "Dhoni", age: 41 },
@@ -41,10 +60,20 @@ function insertfun() {
     }
 }
 
-getData().then(function (message) {
-    console.log(" promise resolved");
+getData().then(function (resp) {
+    console.log(resp);
+    insertfun();
+});
+
+getMoreData().then(function (value) {
+    console.log(value);
+    insertfun();
 });
 
 getData().catch(function () {
+    console.log(" error 404 not found");
+});
+
+getMoreData().catch(function () {
     console.log(" error 404 not found");
 });
