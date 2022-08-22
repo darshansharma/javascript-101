@@ -45,6 +45,9 @@ function getMoreData() {
     });
 }
 
+var contain;
+var container;
+
 function insertfun() {
     var id = 1;
     for (var i = 0; i < 6; i++) {
@@ -60,20 +63,23 @@ function insertfun() {
     }
 }
 
-getData().then(function (resp) {
-    console.log(resp);
+getData()
+.then(function (resp) {
+    contain = resp;
     insertfun();
+})
+.catch(function () {
+    console.log(" error 404 not found");
 });
 
-getMoreData().then(function (value) {
+getMoreData()
+.then(function (value) {
+    container = value
     console.log(value);
     insertfun();
-});
-
-getData().catch(function () {
+})
+.catch(function () {
     console.log(" error 404 not found");
 });
 
-getMoreData().catch(function () {
-    console.log(" error 404 not found");
-});
+
