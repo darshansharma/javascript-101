@@ -47,31 +47,49 @@ function getMoreData() {
 var contain;
 var container;
 
-function insertfun(data) {
+function insertfun() {
     var id = 1;
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 2; i++) {
         document.getElementById("number" + (id + i)).innerHTML =
-            data["data"][i]["firstName"];
+            ["data"][i]["firstName"];
 
         document.getElementById("number" + (id + i + 1)).innerHTML =
-            data["data"][i]["lastName"];
+            ["data"][i]["lastName"];
 
         document.getElementById("number" + (id + i + 2)).innerHTML =
-            data["data"][i]["age"];
+            ["data"][i]["age"];
         id += 2;
     }
 }
+
+function moreinsertfun() {
+    var id = 3;
+    for (var j = 0; j < 4; j++) {
+        document.getElementById("number" + (id + i)).innerHTML =
+            ["data"][j]["firstName"];
+
+        document.getElementById("number" + (id + i + 1)).innerHTML =
+            ["data"][j]["lastName"];
+
+        document.getElementById("number" + (id + i + 2)).innerHTML =
+            ["data"][j]["age"];
+        id += 2;
+    }
+}
+
 
 getData()
     .then(function (resp) {
         contain = resp;
         console.log("First promise resolved");
         console.log(contain);
+        insertfun();
         getMoreData()
             .then(function (value) {
                 console.log("Second promise resolved");
                 container = value;
                 console.log(container);
+                moreinsertfun();
             })
             .catch(function () {
                 console.log(" error 404 not found");
