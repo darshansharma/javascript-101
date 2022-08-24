@@ -51,13 +51,13 @@ function insertfun() {
     var id = 1;
     for (var i = 0; i < 2; i++) {
         document.getElementById("number" + (id + i)).innerHTML =
-            ["data"][i]["firstName"];
+            data["data"][i]["firstName"];
 
         document.getElementById("number" + (id + i + 1)).innerHTML =
-            ["data"][i]["lastName"];
+            data["data"][i]["lastName"];
 
         document.getElementById("number" + (id + i + 2)).innerHTML =
-            ["data"][i]["age"];
+            data["data"][i]["age"];
         id += 2;
     }
 }
@@ -66,13 +66,13 @@ function moreinsertfun() {
     var id = 3;
     for (var j = 0; j < 4; j++) {
         document.getElementById("number" + (id + i)).innerHTML =
-            ["data"][j]["firstName"];
+            data["data"][j]["firstName"];
 
         document.getElementById("number" + (id + i + 1)).innerHTML =
-            ["data"][j]["lastName"];
+            data["data"][j]["lastName"];
 
         document.getElementById("number" + (id + i + 2)).innerHTML =
-            ["data"][j]["age"];
+            data["data"][j]["age"];
         id += 2;
     }
 }
