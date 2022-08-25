@@ -22,19 +22,21 @@ function getData() {
     });
 }
 
-
 function getMoreData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let x = Math.floor(Math.random() * 11);
+            let x = Math.floor(Math.random() * 30);
+            let arr = [];
+            while (x--) {
+                arr.push({
+                    firstName: Math.floor(Math.random() * 30 - 2).toString(),
+                    lastName: Math.floor(Math.random() * 30 - 2).toString(),
+                    age: Math.floor(Math.random() * 30 - 2),
+                });
+            }
             if (true) {
                 resolve({
-                    data: [
-                        { firstName: "Virat", lastName: "Kohli", age: 32 },
-                        { firstName: "Rohit", lastName: "Sharma", age: 34 },
-                        { firstName: "M.S", lastName: "Dhoni", age: 41 },
-                        { firstName: "Yuvraj", lastName: "Singh", age: 39 },
-                    ],
+                    data: arr,
                     message: "data fetched successfully",
                 });
             }
@@ -46,18 +48,8 @@ function getMoreData() {
 }
 
 var arr = [];
-arr.push({ firstName: "Darshan", lastName: "Sharma", age: 24 });
-arr.push( {
-    firstName: "Sanjeev",
-    lastName: "Prabhakar",
-    age: 20,
-});
-arr.push({ firstName: "Virat", lastName: "Kohli", age: 32 });
-arr.push({ firstName: "Rohit", lastName: "Sharma", age: 34 });
-arr.push({ firstName: "M.S", lastName: "Dhoni", age: 41 });
-arr.push({ firstName: "Yuvraj", lastName: "Singh", age: 39 });
 
-function allinone(){
+function allinone() {
     var id = 1;
     for (var i = 0; i < 6; i++) {
         document.getElementById("number" + (id + i)).innerHTML =
@@ -90,7 +82,6 @@ function insertfun() {
     }
 }
 
-
 function moreinsertfun() {
     var id = 7;
     for (var j = 0; j < 4; j++) {
@@ -106,13 +97,12 @@ function moreinsertfun() {
     }
 }
 
-
 getData()
     .then(function (resp) {
         contain = resp;
         console.log("First promise resolved");
         console.log(contain);
-        
+
         getMoreData()
             .then(function (value) {
                 console.log("Second promise resolved");
