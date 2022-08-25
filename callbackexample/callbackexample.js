@@ -1,9 +1,23 @@
-var one = function(fx){
-    fx();
+function A(x){
+    
+    console.log("A");
+    x();
+    
 }
 
-var two = function(){
-    console.log("A","B","C");
+
+function B(){
+    
+    console.log("B");
+    
+    
 }
 
-one(two);
+
+function C(){
+   
+    console.log("C");
+  
+}
+
+A(B());

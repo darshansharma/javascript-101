@@ -22,6 +22,7 @@ function getData() {
     });
 }
 
+
 function getMoreData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -44,6 +45,7 @@ function getMoreData() {
     });
 }
 
+
 var contain;
 var container;
 
@@ -51,28 +53,29 @@ function insertfun() {
     var id = 1;
     for (var i = 0; i < 2; i++) {
         document.getElementById("number" + (id + i)).innerHTML =
-            data["data"][i]["firstName"];
+            contain["data"][i]["firstName"];
 
         document.getElementById("number" + (id + i + 1)).innerHTML =
-            data["data"][i]["lastName"];
+            contain["data"][i]["lastName"];
 
         document.getElementById("number" + (id + i + 2)).innerHTML =
-            data["data"][i]["age"];
+            contain["data"][i]["age"];
         id += 2;
     }
 }
 
+
 function moreinsertfun() {
-    var id = 3;
+    var id = 7;
     for (var j = 0; j < 4; j++) {
-        document.getElementById("number" + (id + i)).innerHTML =
-            data["data"][j]["firstName"];
+        document.getElementById("number" + (id + j)).innerHTML =
+            container["data"][j]["firstName"];
 
-        document.getElementById("number" + (id + i + 1)).innerHTML =
-            data["data"][j]["lastName"];
+        document.getElementById("number" + (id + j + 1)).innerHTML =
+            container["data"][j]["lastName"];
 
-        document.getElementById("number" + (id + i + 2)).innerHTML =
-            data["data"][j]["age"];
+        document.getElementById("number" + (id + j + 2)).innerHTML =
+            container["data"][j]["age"];
         id += 2;
     }
 }
