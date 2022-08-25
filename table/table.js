@@ -1,17 +1,22 @@
 function getData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let x = Math.floor(Math.random() * 11);
+            let x = Math.floor(Math.random() * 30);
+            let arr = [];
+            while (x--) {
+                arr.push({
+                    firstName: Math.floor(
+                        Math.random() * 123456789 - 123456
+                    ).toString(),
+                    lastName: Math.floor(
+                        Math.random() * 1223433456 - 123324
+                    ).toString(),
+                    age: Math.floor(Math.random() * 30 - 10),
+                });
+            }
             if (true) {
                 resolve({
-                    data: [
-                        { firstName: "Darshan", lastName: "Sharma", age: 24 },
-                        {
-                            firstName: "Sanjeev",
-                            lastName: "Prabhakar",
-                            age: 20,
-                        },
-                    ],
+                    data: [...arr],
                     message: "data fetched successfully",
                 });
             }
@@ -29,14 +34,18 @@ function getMoreData() {
             let arr = [];
             while (x--) {
                 arr.push({
-                    firstName: Math.floor(Math.random() * 30 - 2).toString(),
-                    lastName: Math.floor(Math.random() * 30 - 2).toString(),
-                    age: Math.floor(Math.random() * 30 - 2),
+                    firstName: Math.floor(
+                        Math.random() * 123456789 - 123456
+                    ).toString(),
+                    lastName: Math.floor(
+                        Math.random() * 1223433456 - 123324
+                    ).toString(),
+                    age: Math.floor(Math.random() * 30 - 10),
                 });
             }
             if (true) {
                 resolve({
-                    data: arr,
+                    data: [...arr],
                     message: "data fetched successfully",
                 });
             }
@@ -108,7 +117,6 @@ getData()
                 console.log("Second promise resolved");
                 container = value;
                 console.log(container);
-                allinone();
             })
             .catch(function () {
                 console.log(" error 404 not found");
