@@ -45,6 +45,32 @@ function getMoreData() {
     });
 }
 
+var arr = [];
+arr.push({ firstName: "Darshan", lastName: "Sharma", age: 24 });
+arr.push( {
+    firstName: "Sanjeev",
+    lastName: "Prabhakar",
+    age: 20,
+});
+arr.push({ firstName: "Virat", lastName: "Kohli", age: 32 });
+arr.push({ firstName: "Rohit", lastName: "Sharma", age: 34 });
+arr.push({ firstName: "M.S", lastName: "Dhoni", age: 41 });
+arr.push({ firstName: "Yuvraj", lastName: "Singh", age: 39 });
+
+function allinone(){
+    var id = 1;
+    for (var i = 0; i < 6; i++) {
+        document.getElementById("number" + (id + i)).innerHTML =
+            arr[i]["firstName"];
+
+        document.getElementById("number" + (id + i + 1)).innerHTML =
+            arr[i]["lastName"];
+
+        document.getElementById("number" + (id + i + 2)).innerHTML =
+            arr[i]["age"];
+        id += 2;
+    }
+}
 
 var contain;
 var container;
@@ -86,13 +112,13 @@ getData()
         contain = resp;
         console.log("First promise resolved");
         console.log(contain);
-        insertfun();
+        
         getMoreData()
             .then(function (value) {
                 console.log("Second promise resolved");
                 container = value;
                 console.log(container);
-                moreinsertfun();
+                allinone();
             })
             .catch(function () {
                 console.log(" error 404 not found");
