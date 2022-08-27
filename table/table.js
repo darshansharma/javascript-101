@@ -13,20 +13,12 @@ function getData() {
                     ).toString(),
                     age: Math.floor(Math.random() * 30 - 10),
                 });
-
             }
             if (true) {
                 resolve({
                     data: [...arr],
                     message: "data fetched successfully",
-
                 });
-
-            }
-
-            for (var i = 0; i < arr.length(); i++) {
-                arr1[i].push(arr[i]);
-
             }
             reject({
                 error: "No data found",
@@ -55,14 +47,8 @@ function getMoreData() {
                 resolve({
                     data: [...arr],
                     message: "data fetched successfully",
-
                 });
             }
-            for (var i = 0; i < arr.length(); i++) {
-                arr1[i].push(arr[i]);
-            }
-
-
             reject({
                 error: "No data found",
             });
@@ -70,72 +56,35 @@ function getMoreData() {
     });
 }
 
-var arr1 = [];
-
-
-
-function allinone() {
-    var id = 1;
-    for (var i = 0; i < 6; i++) {
-        document.getElementById("number" + (id + i)).innerHTML =
-            arr[i]["firstName"];
-
-        document.getElementById("number" + (id + i + 1)).innerHTML =
-            arr[i]["lastName"];
-
-        document.getElementById("number" + (id + i + 2)).innerHTML =
-            arr[i]["age"];
-        id += 2;
-    }
-}
-
-var contain;
-var container;
-
-function insertfun() {
-    var id = 1;
-    for (var i = 0; i < 2; i++) {
-        document.getElementById("number" + (id + i)).innerHTML =
-            contain["data"][i]["firstName"];
-
-        document.getElementById("number" + (id + i + 1)).innerHTML =
-            contain["data"][i]["lastName"];
-
-        document.getElementById("number" + (id + i + 2)).innerHTML =
-            contain["data"][i]["age"];
-        id += 2;
-    }
-}
-
-function moreinsertfun() {
-    var id = 7;
-    for (var j = 0; j < 4; j++) {
-        document.getElementById("number" + (id + j)).innerHTML =
-            container["data"][j]["firstName"];
-
-        document.getElementById("number" + (id + j + 1)).innerHTML =
-            container["data"][j]["lastName"];
-
-        document.getElementById("number" + (id + j + 2)).innerHTML =
-            container["data"][j]["age"];
-        id += 2;
-    }
-}
+let arr1 = [];
 
 getData()
     .then(function (resp) {
-        contain = resp;
+        let contain = resp["data"];
         console.log("First promise resolved");
+        for (let i = 0; i < contain.length; i++) {
+            arr1.push(contain[i]);
+        }
         console.log(contain);
-
         getMoreData()
             .then(function (value) {
                 console.log("Second promise resolved");
-                container = value;
+                let container = value["data"];
                 console.log(container);
+                for (let i = 0; i < container.length; i++) {
+                    arr1.push(container[i]);
+                }
+                let table = document.getElementById("mainTable");
+                for (let i = 0; i < arr1.length; i++) {
+                    let row = table.insertRow();
+                    row.insertCell().append(arr1[i].firstName);
+                    row.insertCell().append(arr1[i].lastName);
+                    row.insertCell().append(arr1[i].age);
+                }
+                console.log("Final array = ", arr1);
             })
-            .catch(function () {
-                console.log(" error 404 not found");
+            .catch(function (error) {
+                console.log(error);
             });
     })
     .catch(function (err) {
