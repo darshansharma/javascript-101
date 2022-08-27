@@ -13,12 +13,20 @@ function getData() {
                     ).toString(),
                     age: Math.floor(Math.random() * 30 - 10),
                 });
+
             }
             if (true) {
                 resolve({
                     data: [...arr],
                     message: "data fetched successfully",
+
                 });
+
+            }
+
+            for (var i = 0; i < arr.length(); i++) {
+                arr1[i].push(arr[i]);
+
             }
             reject({
                 error: "No data found",
@@ -47,8 +55,14 @@ function getMoreData() {
                 resolve({
                     data: [...arr],
                     message: "data fetched successfully",
+
                 });
             }
+            for (var i = 0; i < arr.length(); i++) {
+                arr1[i].push(arr[i]);
+            }
+
+
             reject({
                 error: "No data found",
             });
@@ -56,7 +70,9 @@ function getMoreData() {
     });
 }
 
-var arr = [];
+var arr1 = [];
+
+
 
 function allinone() {
     var id = 1;

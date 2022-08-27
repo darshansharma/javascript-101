@@ -1,23 +1,21 @@
-function A(x){
-    
+function A(x) {
+
     console.log("A");
     x();
-    
+
 }
 
 
-function B(){
-    
+function B(y) {
+     
     console.log("B");
-    
+    y();
     
 }
 
-
-function C(){
-   
-    console.log("C");
-  
+function C() {
+   console.log("C");
 }
 
-A(B());
+A(B);
+B(A(C));
