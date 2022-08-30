@@ -56,9 +56,7 @@ function getMoreData() {
     });
 }
 
-
-function insertfun(){
-
+function insertfun() {
     let arr1 = [];
     for (let i = 0; i < store.length; i++) {
         arr1.push(store[i]);
@@ -68,7 +66,6 @@ function insertfun(){
         arr1.push(bigstorage[i]);
     }
 
-
     let table = document.getElementById("mainTable");
     for (let i = 0; i < arr1.length; i++) {
         let row = table.insertRow();
@@ -76,34 +73,20 @@ function insertfun(){
         row.insertCell().append(arr1[i].lastName);
         row.insertCell().append(arr1[i].age);
     }
-
 }
-
-
-
-
-
-
-function moreinsertfun(){
-
-}
-
-let store;
-let bigstorage;
-
 
 getData()
     .then(function (resp) {
         store = resp["data"];
         console.log("First promise resolved");
-       
+
         console.log(store);
         getMoreData()
             .then(function (value) {
                 console.log("Second promise resolved");
                 bigstorage = value["data"];
                 console.log(bigstorage);
-              insertfun();
+                insertfun();
                 console.log("Final array = ", arr1);
             })
             .catch(function (error) {
