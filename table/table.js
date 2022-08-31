@@ -1,17 +1,22 @@
 function getData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let x = Math.floor(Math.random() * 11);
+            let x = Math.floor(Math.random() * 30);
+            let arr = [];
+            while (x--) {
+                arr.push({
+                    firstName: Math.floor(
+                        Math.random() * 123456789 - 123456
+                    ).toString(),
+                    lastName: Math.floor(
+                        Math.random() * 1223433456 - 123324
+                    ).toString(),
+                    age: Math.floor(Math.random() * 30 - 10),
+                });
+            }
             if (true) {
                 resolve({
-                    data: [
-                        { firstName: "Darshan", lastName: "Sharma", age: 24 },
-                        {
-                            firstName: "Sanjeev",
-                            lastName: "Prabhakar",
-                            age: 20,
-                        },
-                    ],
+                    data: [...arr],
                     message: "data fetched successfully",
                 });
             }
@@ -25,15 +30,22 @@ function getData() {
 function getMoreData() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let x = Math.floor(Math.random() * 11);
+            let x = Math.floor(Math.random() * 30);
+            let arr = [];
+            while (x--) {
+                arr.push({
+                    firstName: Math.floor(
+                        Math.random() * 123456789 - 123456
+                    ).toString(),
+                    lastName: Math.floor(
+                        Math.random() * 1223433456 - 123324
+                    ).toString(),
+                    age: Math.floor(Math.random() * 30 - 10),
+                });
+            }
             if (true) {
                 resolve({
-                    data: [
-                        { firstName: "Virat", lastName: "Kohli", age: 32 },
-                        { firstName: "Rohit", lastName: "Sharma", age: 34 },
-                        { firstName: "M.S", lastName: "Dhoni", age: 41 },
-                        { firstName: "Yuvraj", lastName: "Singh", age: 39 },
-                    ],
+                    data: [...arr],
                     message: "data fetched successfully",
                 });
             }
@@ -44,55 +56,49 @@ function getMoreData() {
     });
 }
 
-var contain;
-var container;
 
-function insertfun() {
-    var id = 1;
-    for (var i = 0; i < 2; i++) {
-        document.getElementById("number" + (id + i)).innerHTML =
-            data["data"][i]["firstName"];
+function insertfun(first, second) {
 
-        document.getElementById("number" + (id + i + 1)).innerHTML =
-            data["data"][i]["lastName"];
-
-        document.getElementById("number" + (id + i + 2)).innerHTML =
-            data["data"][i]["age"];
-        id += 2;
+    let arr1 = [];
+    for (let i = 0; i < first.length; i++) {
+        arr1.push(first[i]);
     }
-}
 
-function moreinsertfun() {
-    var id = 3;
-    for (var j = 0; j < 4; j++) {
-        document.getElementById("number" + (id + i)).innerHTML =
-            data["data"][j]["firstName"];
-
-        document.getElementById("number" + (id + i + 1)).innerHTML =
-            data["data"][j]["lastName"];
-
-        document.getElementById("number" + (id + i + 2)).innerHTML =
-            data["data"][j]["age"];
-        id += 2;
+    for (let i = 0; i < second.length; i++) {
+        arr1.push(second[i]);
     }
+
+
+    let table = document.getElementById("mainTable");
+    for (let i = 0; i < arr1.length; i++) {
+        let row = table.insertRow();
+        row.insertCell().append(arr1[i].firstName);
+        row.insertCell().append(arr1[i].lastName);
+        row.insertCell().append(arr1[i].age);
+    }
+
 }
 
 
 getData()
     .then(function (resp) {
-        contain = resp;
+        let store;
+
+        store = resp["data"];
         console.log("First promise resolved");
-        console.log(contain);
-        insertfun();
+
+        console.log(store);
         getMoreData()
             .then(function (value) {
+                let bigstorage;
                 console.log("Second promise resolved");
-                container = value;
-                console.log(container);
-                moreinsertfun();
+                bigstorage = value["data"];
+                console.log(bigstorage);
+                insertfun(store, bigstorage);
+                console.log("Final array = ", arr1);
             })
-            .catch(function () {
-                console.log(" error 404 not found");
+            .catch(function (error) {
+                console.log(error);
             });
     })
     .catch(function (err) {
