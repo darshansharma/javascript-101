@@ -1,0 +1,20 @@
+#slideshow {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+}
+
+.colorbox1{
+  flex:1;
+  background-color: red;
+}
+
+.colorbox2{
+  flex:1;
+  background-color: black;
+}
+.colorbox3{
+  flex:1;
+  background-color: yellow;
+}
