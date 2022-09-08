@@ -4,7 +4,7 @@ let fact = 1;
 
 let c;
 
-let d = 4;
+let d = 5;
 
 function factfun(c) {
     fact = fact * a;
